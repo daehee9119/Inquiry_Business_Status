@@ -81,7 +81,7 @@ def extract_status(target_str):
 def main():
     # ini 파일을 읽어올 config 객체 생성
     config = configparser.ConfigParser()
-    config.read('./config.ini')
+    config.read('./config/bs_config.ini')
     config_dict = config[os.path.relpath(__file__)]
 
     # API 사용을 위한 인증 정보를 환경 변수에 설정
@@ -118,7 +118,7 @@ def main():
 
 
 # ######################CONFIG CHECK & CALL MAIN###################### #
-if not(os.path.isfile('./config.ini')):
-    raise FileNotFoundError("./config.ini 파일이 존재하지 않습니다")
+if not(os.path.isfile('./config/bs_config.ini')):
+    raise FileNotFoundError("./config/bs_config.ini 파일이 존재하지 않습니다")
 else:
     main()
