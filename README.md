@@ -9,12 +9,24 @@
 
 ## 결과 파일이 적재될 폴더 변경 원할 경우
 - [Inquiry_Business_Status.py] 섹션의 Result 키에 할당된 값을 변경.  
+
+## 필요한 파이썬 패키지 설치
+- *./config/requirements.txt* 를 참조하여 pip 명령어를 사용
+'''
+> cd [repository directory]
+> pip install -r ./config/requirements.txt
+'''
+
 ---------------------------------------
-# Data Set Preperation
-## 실행 시 Input으로 쓰일 이미지 파일 적재
+
+
+## Input Data Set Preperation
 1. 파이썬 스크립트 경로에 Data_Set 폴더 생성    
 2. 해당 폴더 내 수집 대상인 사업자 등록증 이미지 파일들을 모두 ./Data_Set 폴더 내 적재    
    * 이미지 해상도가 낮으면 OCR Confidence가 낮을 수 있습니다.  
+
+## Run Script
+1. 
 
 ## Output
 - config.ini 파일에서 설정한 Result 키값에 할당된 경로로 결과 파일이 저장됨  
