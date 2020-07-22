@@ -9,7 +9,7 @@
 
 ## 결과 파일이 적재될 폴더 변경 원할 경우
 - [Inquiry_Business_Status.py] 섹션의 Result 키에 할당된 값을 변경.  
-
+---------------------------------------
 # Data Set Preperation
 ## 실행 시 Input으로 쓰일 이미지 파일 적재
 1. 파이썬 스크립트 경로에 Data_Set 폴더 생성    
