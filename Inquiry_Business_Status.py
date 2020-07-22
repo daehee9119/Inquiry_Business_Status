@@ -108,8 +108,11 @@ def main():
         with io.open(result_path + img_file + '_result.txt', 'w', encoding="utf-8") as f:
             f.write(total_str)
         # 프로젝트 root 경로에 이미지 파일별 txt 생성
-        result_str += img_file + ": " + result_bsn + "\nstatus: " + result_status[0] + "\tdesc: " + \
-                      result_status[1] + '\n\n'
+        result_str += "Img File: " + img_file + \
+                      "\nBusiness Number: " + result_bsn + \
+                      "\nstatus: " + result_status[0] + \
+                      "\ndesc: " + result_status[1] + \
+                      '\n\n'
 
     # 결과값이 존재할 때만 만들 것
     if result_str != "":
