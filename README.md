@@ -1,6 +1,7 @@
 # Configuration
 ## 사용할 API KEY 설정
-1. ./config/bs_config.ini 파일 열람
+1. 하단 경로에 존재하는 파일 열람. (폴더명/파일명은 변경하면 안됨)
+   >>>'./config/bs_config.ini'
 2. [Inquiry_Business_Status.py] 섹션의 API_KEY키를 위한 값 설정.
    -> Google Cloud Vision API 설정 시 받는 KEY를 JSON으로 받아 경로와 파일명을 값으로 설정
    ex. API_KEY = ./API_KEY/xxx.json
