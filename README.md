@@ -13,8 +13,8 @@
 ## 필요한 파이썬 패키지
 - *./config/requirements.txt* 에 담긴 모든 패키지
 '''
->> cd [repository directory]  
->> pip install -r ./config/requirements.txt  
+cd [repository directory]  
+pip install -r ./config/requirements.txt  
 '''
 
 ---------------------------------------
