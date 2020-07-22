@@ -27,7 +27,8 @@
 
 ### Run Script
 - *Inquiry_Business_Status.py* 파일을 실행  
-```> python Inquiry_Business_Status.py
+```
+> python Inquiry_Business_Status.py
 ```  
   
 
