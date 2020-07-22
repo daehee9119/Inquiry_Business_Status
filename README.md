@@ -1,5 +1,3 @@
-# Inquiry_Business_Status
-
 # Configuration
 ## 사용할 API KEY 설정
 1. ./config/bs_config.ini 파일 열람
