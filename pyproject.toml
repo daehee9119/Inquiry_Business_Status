@@ -10,7 +10,10 @@ packages = [
     {include = "*.py"}
 ]
 exclude = [
-    "config/*.ini"
+    "config/*.ini",
+    "data/Input/*",
+    "data/Output/*",
+    "logs/*.log"
 ]
 
 [tool.poetry.dependencies]
