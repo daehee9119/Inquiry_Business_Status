@@ -1,4 +1,4 @@
 [Inquiry_Business_Status.py]
-API_KEY = [YOUR_API_KEY_JSON]
+API_KEY = [YOUR_API_JSON_FILE]
 Origin_Data = ./Data_Set/
-Result = ./BS_Result/
+Result = ./Result/

@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "Inquiry_Business_Status"
+version = "0.0.1"
+description = ""
+authors = [
+    "daehee.kim <daehee9119@gmail.com>"
+]
+packages = [
+    {include = "config"},
+    {include = "*.py"}
+]
+exclude = [
+    "config/*.ini"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8.5"
+pandas = "^1.2.4"
+google-cloud-vision = "^2.3.1"
+psutil = "^5.8.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,10 +1,18 @@
+# 표준 라이브러리
 import os
 import re
+import io
+import sys
+# 3rd party
 import requests
 import Cloud_Vision
-import io
-import configparser
-import Util
+# 내부 패키지
+from utils.utils_config import get_configs
+from utils.utils_logs import create_logger
+from utils.utils_io import make_dir
+
+from config import ConfigBean
+from data import DataBean
 
 
 def extract_bsn(target_str):
@@ -78,20 +86,26 @@ def extract_status(target_str):
 
 
 # ######################MAIN STREAM###################### #
-def main():
+if __name__ == '__main__':
+    # 로깅 객체 생성
+    my_logger = create_logger("RPA_LOG")
+    # locale.setlocale(locale.LC_TIME, 'ko_KR.UTF-8')
+    # 리턴용 string
+    ret_str = 'NA'
+
     # ini 파일을 읽어올 config 객체 생성
-    config = configparser.ConfigParser()
-    config.read('./config/bs_config.ini')
-    config_dict = config[os.path.relpath(__file__)]
+    config_dict = get_configs(my_logger)["MAIN"]
 
     # API 사용을 위한 인증 정보를 환경 변수에 설정
     # 그냥 환경변수에 설정하면 원인 모를 이유로 python 실행 시 가져오지 못함
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = config_dict['API_KEY']
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = ConfigBean.ABS_PATH + "\\" + config_dict['API_KEY']
     # Vision API에 요청할 사업자 등록증 이미지를 담은 경로
-    img_path = config_dict['Origin_Data']
-    result_path = config_dict['Result']
+    img_path = DataBean.INPUT_ABS_PATH
+    result_path = DataBean.OUTPUT_ABS_PATH
 
-    Util.make_dir([img_path, result_path])
+    if not make_dir([img_path, result_path], my_logger):
+        my_logger.error("Input, Output 경로 생성 실패")
+        sys.exit(-1)
 
     # 경로 내 모든 이미지 파일 순회
     result_str = ""
@@ -118,10 +132,3 @@ def main():
     if result_str != "":
         with io.open(result_path + 'total_result.txt', 'w', encoding="utf-8") as f:
             f.write(result_str)
-
-
-# ######################CONFIG CHECK & CALL MAIN###################### #
-if not(os.path.isfile('./config/bs_config.ini')):
-    raise FileNotFoundError("./config/bs_config.ini 파일이 존재하지 않습니다")
-else:
-    main()

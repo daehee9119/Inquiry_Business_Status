@@ -1,0 +1,5 @@
+data/Input/
+data/Output/
+
+config/*.json
+config/*.ini

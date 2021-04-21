@@ -1,7 +1,7 @@
-# 이미지/동영상을 base64로 인코딩한 stream 값을 만들기 위함
+# 표준 라이브러리
 import io
-# API 리턴값을 DataFrame 에 넣기 위함
-import pandas as pd
+# 3rd party
+# 내부 패키지
 
 
 def detect_img_text(path):
