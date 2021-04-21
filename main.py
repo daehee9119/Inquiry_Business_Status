@@ -116,9 +116,9 @@ if __name__ == '__main__':
     # *************CONFIG SETTING END*************
     my_logger.info("Configuration 완료")
 
-    # if not move_img(img_path, preprocessed_path, my_logger):
-    #     my_logger.error("이미지 전처리 실패")
-    #     sys.exit(-1)
+    if not move_img(img_path, preprocessed_path, my_logger):
+        my_logger.error("이미지 전처리 실패")
+        sys.exit(-1)
     my_logger.info("이미지 전처리 성공")
 
     # 경로 내 모든 이미지 파일 순회
