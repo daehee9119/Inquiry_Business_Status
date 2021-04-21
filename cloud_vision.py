@@ -4,12 +4,21 @@ import io
 # 내부 패키지
 
 
-def detect_img_text(path):
+def detect_img_text(path: str):
     """
     수령한 이미지를 vision api를 사용해 텍스트로 변환한 후 해당 텍스트 반환
-    :param path: 원본 이미지 (경로+파일명)
-    :return: String
+
+    Parameters
+    ----------
+    path : str
+        이미지 경로명, 파일명
+
+    Returns
+    -------
+    str
+        이미지에서 추출한 full string
     """
+
     """Detects text in the file."""
     from google.cloud import vision
 
@@ -18,7 +27,7 @@ def detect_img_text(path):
     with io.open(path, 'rb') as image_file:
         content = image_file.read()
 
-    image = vision.types.Image(content=content)
+    image = vision.Image(content=content)
 
     response = client.text_detection(image=image)
     texts = response.text_annotations
